@@ -25,10 +25,11 @@ namespace solitaire {
 		int mY;
 		Type mType;
 		bool mIsFront;
+		int mIndex;
 
 	public:
-		Card(HWND hwnd, Type type, int x, int y) :
-			mHwnd(hwnd), mX(x), mY(y), mType(type), mIsFront(false)
+		Card(HWND hwnd, int index, Type type, int x, int y) :
+			mHwnd(hwnd), mIndex(index), mX(x), mY(y), mType(type), mIsFront(false)
 		{
 			mBackImage = std::make_unique<Gdiplus::Image>(L"images/card_back.png");
 
@@ -53,6 +54,9 @@ namespace solitaire {
 		void Flip(bool isFront);
 		bool CheckClicked(int x, int y);
 		void Invalidate();
+
+		Type Gettype() { return mType; }
+		int Getindex() { return mIndex; }
 	}; 
 }
 

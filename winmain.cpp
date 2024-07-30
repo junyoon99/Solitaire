@@ -47,11 +47,11 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance,
 
     RECT wr = { 0, 0, 1024, 768 };
 
-    AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
+    AdjustWindowRect(&wr, WS_OVERLAPPED | WS_SYSMENU, FALSE);
     hWnd = CreateWindowEx(NULL,
         gClassName,
         L"Solitaire Game",
-        WS_OVERLAPPEDWINDOW,
+        WS_OVERLAPPED | WS_SYSMENU,
         CW_USEDEFAULT,
         CW_USEDEFAULT,
         wr.right - wr.left,

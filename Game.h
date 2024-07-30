@@ -18,10 +18,12 @@ namespace solitaire
 		void OnClick(int x, int y);
 
 	private:
-		HWND mhwnd;
+		HWND mHwnd;
 		std::unique_ptr<Gdiplus::Image> mBackgroundImage;
 		std::list<Card> mDeck;
 		int mFlipCount;
+		Card* mpSelectedCard;
+
 
 		void CreateCardDeck();
 	};
